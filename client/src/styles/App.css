@@ -1,0 +1,13 @@
+.active{
+    border-bottom: 2px solid rgb(174, 174, 255);
+    font-weight: bold;
+}
+
+/* print.css */
+@media print {
+    /* Hide header elements */
+    .hide-on-print {
+        visibility: hidden;
+    }
+  }
+  
