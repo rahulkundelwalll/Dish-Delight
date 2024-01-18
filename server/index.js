@@ -12,7 +12,12 @@ import paymentRouter from './Routes/paymentRoute.js';
 const PORT = process.env.PORT || 8080;
 const app = express();
 
-app.use(cors());
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://dish-delight-r4g9.vercel.app');
+  res.header('Access-Control-Allow-Credentials', true);
+  // Other CORS headers as needed
+  next();
+});
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(cookieParser());
